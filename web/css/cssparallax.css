@@ -1,0 +1,38 @@
+.plax.ccparallax-one {
+  background-image: url("images/news1.jpg");
+}
+.plax.ccparallax-two {
+  background-image: url("images/news2.png");
+}
+.plax.ccparallax-three {
+  background-image: url("images/news3.jpg");
+}
+.plax.ccparallax-four {
+  background-image: url("images/plax4.jpg");
+}
+
+
+.plax:last-child {
+  margin-bottom: 0;
+}
+.plax.ccparallax {
+    background-attachment: fixed;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 50px;
+    padding-top: 50px;
+}
+
+#eventsplax{
+    padding-bottom: 150px;
+    padding-top: 150px;
+}
+.plax.content {
+    background: none repeat scroll 0 0 white;
+    min-height: 630px;
+}
+.plax.footer {
+    background: none repeat scroll 0 0 black;
+    min-height: 430px;
+}

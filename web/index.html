@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/indexStyles.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+
+	<script src="js/angular.min.js"></script>
+	<script src="js/angular-controller.js"></script>
+	
+	<meta charset="ISO-8859-1">
+	<title>Fried Ball Stand - Abstract Factory Demo</title>
+
+</head>
+
+<body ng-app="friedBallStandApp">
+	<div class="container" ng-controller="OrderCtrl">
+		<div class="row">
+		
+			<div class="col-md-3">
+				<button class="btn btn-default" ng-click="addTusok(0);">
+					<img src="images/balls/fishball.jpg" class="item"/>
+				</button>
+				
+				<button class="btn btn-default" ng-click="addTusok(1);">
+					<img src="images/balls/squidball.jpg" class="item"/>
+				</button>
+				
+				<button class="btn btn-default" ng-click="addTusok(2);">
+					<img src="images/balls/chickenball.jpg" class="item"/>
+				</button>
+				
+				<p>Magkano kaya inabot?
+				<input type="checkbox" ng-model="showTotal" aria-label="Toggle ngShow" addTusok>
+				</p>
+				
+			</div>
+		
+		    <div class="col-md-6" align="center">
+		    	<img src="images/spearFishing.jpg"/>
+			</div>
+		
+			<div class="col-md-3">
+				<fieldset>
+					<legend>Meryenda Details Checker</legend>
+					<!-- default method is GET -->
+					<form action="processmeryenda.html" > <!-- action=servletname -->
+						<p>Fried Ball:
+							<select ng-model='selectfb.friedBallType' name='friedBallType' 
+							required ng-options='option.value as option.name for option in friedBallOptions track by option.value'
+							placeholder="Tusok">
+							<option value="" hidden selected></option>
+							</select>
+						</p>
+						<!-- bind model, set options to array values defined in angular-controller.js 
+						set an initial selected empty option that isn't included as an actual option aka a null value
+						-->
+						
+						<p>Sauce:
+							<select ng-model='selects.sauceType' name='sauceType' 
+							required ng-options='option.value as option.name for option in sauceOptions track by option.value'
+							placeholder="Sawsaw">
+							<option value="" hidden selected></option>
+							</select>
+						</p>
+						<p>Palamig:
+							<select ng-model='selectp.palamigType' name='palamigType' 
+							required ng-options='option.value as option.name for option in palamigOptions track by option.value'
+							placeholder="Inom">
+							<option value="" hidden selected></option>
+							</select>
+						</p>
+						<input type="submit" value="Make chibog na"/>&nbsp;&nbsp;&nbsp;
+						<input type="reset"/>
+					</form>
+				</fieldset>
+				
+				<div class="check-element animate-show-hide" ng-show="showTotal">
+					<hr>
+					<h4>Tusok Tracker</h4>
+		    		<p> Fish Ball: {{ tusoks[0] }} </p>
+		    		<p> Squid Ball: {{ tusoks[1] }} </p>
+		    		<p> Chicken Ball: {{ tusoks[2] }} </p>
+		    		<ul>
+					    <li ng-repeat="tusok in tusoks">
+					        Tusok Number [{{$index + 1}}]: {{tusoks[$index]}}
+					    </li>
+					</ul>
+					{{tusoks.length}} items of tusok were listed.
+		    		<p> Total Tusok: {{ totalTusok }} </p>
+				</div>
+				
+				
+	    	</div>
+    	
+		</div>
+	
+	</div> <!-- row div end -->
+	
+</body>
+
+</html>

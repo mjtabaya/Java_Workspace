@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/indexStyles.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+
+	<script src="js/angular.min.js"></script>
+	<script src="js/angular-controller.js"></script>
+	
+	<meta charset="ISO-8859-1">
+	<title>Fried Ball Stand - Abstract Factory Demo</title>
+
+</head>
+
+<body ng-app="friedBallStandApp">
+	<div class="container" ng-controller="OrderCtrl">
+		<div class="row">
+		
+			<div class="col-md-3">
+				<button class="btn btn-default" ng-click="addTusok(0);">
+					<img src="images/balls/fishball.jpg" class="item"/>
+				</button>
+				
+				<button class="btn btn-default" ng-click="addTusok(1);">
+					<img src="images/balls/squidball.jpg" class="item"/>
+				</button>
+				
+				<button class="btn btn-default" ng-click="addTusok(2);">
+					<img src="images/balls/chickenball.jpg" class="item"/>
+				</button>
+				
+				<p>Magkano kaya inabot?
+				<input type="checkbox" ng-model="showTotal" aria-label="Toggle ngShow" addTusok>
+				</p>
+				
+			</div>
+		
+		    <div class="col-md-6" align="center">
+		    	<img src="images/spearFishing.jpg"/>
+			</div>
+		
+			<div class="col-md-3">
+				<fieldset>
+					<legend>Meryenda Details Checker</legend>
+					<!-- default method is GET -->
+					<form action="processmeryenda.html" > <!-- action=servletname -->
+						<p>Fried Ball:
+							<select name="friedBallType">
+								<option value="FSB">Fishball<option>
+								<option value="SQB">Squidball</option>
+								<option value="CHB">Chikenball</option>
+								<option value="KKM">Kikiam</option>
+								<option value="KWK">Kwek2</option>
+								<option value="NBL">Teka nag-iipon ako</option>
+							</select> 
+						</p>
+						<p>Sauce:
+							<select name="sauceType">
+								<option value="MSS">Manong's Special Sauce</option>
+								<option value="SMG">Maanghang na Suka</option>
+								<option value="SKA">Suka</option>
+								<option value="NSC">Wag! Kung sino2 nagsawsaw dyan..</option>
+							</select> 
+						</p>
+						<p>Palamig:
+							<select name="palamigType">
+								<option value="GLM">Gulaman</option>
+								<option value="BPN">Buko Pandan</option>
+								<option value="BKJ">Buko Juice</option>
+								<option value="PNJ">Pineapple Juice</option>
+								<option value="NJC">Ay, ubos na barya ko</option>
+							</select> 
+						</p>
+						<input type="submit" value="Make chibog na"/>&nbsp;&nbsp;&nbsp;
+						<input type="reset"/>
+					</form>
+				</fieldset>
+				
+				<div class="check-element animate-show-hide" ng-show="showTotal">
+					<hr>
+					<h4>Tusok Tracker</h4>
+		    		<p> Fish Ball: {{ tusoks[0] }} </p>
+		    		<p> Squid Ball: {{ tusoks[1] }} </p>
+		    		<p> Chicken Ball: {{ tusoks[2] }} </p>
+		    		<ul>
+					    <li ng-repeat="tusok in tusoks">
+					        Tusok Number [{{$index + 1}}]: {{tusoks[$index]}}
+					    </li>
+					</ul>
+					{{tusoks.length}} items of tusok were listed.
+		    		<p> Total Tusok: {{ totalTusok }} </p>
+				</div>
+				
+				
+	    	</div>
+    	
+		</div>
+	
+	</div> <!-- row div end -->
+	
+</body>
+
+</html>

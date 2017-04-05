@@ -1,0 +1,52 @@
+.banner-bg{
+	background-color: gray;
+}
+
+.table-striped>tbody>tr:nth-child(odd)>td, 
+.table-striped>tbody>tr:nth-child(odd)>th {
+   background-color: orange; // Choose your own color here
+ }
+
+[class*="col-"]{
+    float: none;
+    display: table-cell;
+    vertical-align: top;
+}
+
+.banner{
+    display: block;
+    margin: 0 auto;
+	padding-top: 20%;
+	width: 85%;
+	height: 80%;
+}
+
+.item{
+	height: 130px;
+    overflow: hidden;
+}
+
+.item img{
+    height: 100%;
+    width: auto;
+}
+
+.tb {
+    height: 100%;
+    width: 100%;
+}
+
+.animate-show-hide.ng-hide {
+  opacity: 0;
+}
+
+.animate-show-hide.ng-hide-add,
+.animate-show-hide.ng-hide-remove {
+  transition: all linear 0.5s;
+}
+
+.showTotal{
+  border: 1px solid black;
+  opacity: 1;
+  padding: 10px;
+}
