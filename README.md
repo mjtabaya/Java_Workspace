@@ -1,4 +1,3 @@
-# dcodeh01---FishBallStand
-A demo application for practicing design patterns (Factory, Abstract Factory, Singleton), Angular JS and Servlets.
+# Java_Workspace
 
-I hope you forgive me for skipping Hello World as this is the 2nd time I use github.
+mjtabaya's workspace to sync files at home and school, most are Java files.
